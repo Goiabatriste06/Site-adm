@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Restrita</title>
+</head>
+<body>
+    <h1>Bem-vindo ao Dashboard!</h1>
+    <p>Você fez login com sucesso!</p>
+    <button onclick="logout()">Sair</button>
+
+    <script>
+        // Verifica se o usuário está logado
+        if (!localStorage.getItem('loggedIn')) {
+            window.location.href = 'index.html';  // Redireciona para a página de login
+        }
+
+        // Função de logout
+        function logout() {
+            localStorage.removeItem('loggedIn');
+            window.location.href = 'index.html';  // Redireciona para a página de login
+        }
+    </script>
+</body>
+</html>
